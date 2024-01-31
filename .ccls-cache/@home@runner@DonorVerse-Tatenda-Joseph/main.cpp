@@ -3,11 +3,9 @@
 
 //Importing required modules and Libraries
 #include <iostream> //This is the iostream built in Library for C++ input output functions
-#include "data_structures.cpp"
-
+#include <string>
 // Importing namespaces in various modules into module
 using namespace std;
-using namespace definitions;
 
 
 void add_donor(){
@@ -33,21 +31,27 @@ int main() { //TJ – this introduces the first function the compiler will place
     cin >> sel;
     switch(sel){
       case 1:
-        sel=0;
       add_donor();
-      case 2:
-        sel=0;
-      search_donor();
-      case 3:
-        sel=0;
-      modify_donors();
-      case 4:
       sel=0;
+      continue;
+      case 2:
+      search_donor();
+      sel=0;
+      continue;
+      case 3:
+      modify_donors();
+      sel=0;
+      continue;
+      case 4:
       cout<< "\n Exiting......... \n";
       cout << "Goodbye";
+      sel=0;
+      continue;
       default:
-      cout << "Something went wrong. Try again!";
+      cout << "Something went wrong. Try again! \n \n";
       sel=4;
+      continue;
+      
     }
     }  
   }
