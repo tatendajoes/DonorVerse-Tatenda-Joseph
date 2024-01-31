@@ -48,9 +48,17 @@ int main() { //TJ – this introduces the first function the compiler will place
       sel=0;
       continue;
       default:
-      cout << "Something went wrong. Try again! \n \n";
-      sel=4;
-      continue;
+        if (sel<1 || sel>4){
+          cout << "Something went wrong. Try again! \n \n";
+          sel=4;
+          continue;
+        }else{
+          cout << "This program only accepts integers!...";
+          sel=0;
+          continue;
+        }
+      
+     
       
     }
     }  
