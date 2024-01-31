@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-// In this main function a loop is implemented which continues to iterate until a vaild Menu input is inserted
+// In this main function a loop is implemented which continues to run until a vaild Menu input is inserted
 int main() {
   int sel=0;
   while (sel<1 || sel>4){
