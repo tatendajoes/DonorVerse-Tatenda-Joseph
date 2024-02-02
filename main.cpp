@@ -3,32 +3,24 @@
 
 //Importing required modules and Libraries
 #include <iostream> //This is the iostream built in Library for C++ input output functions
-#include <string>
-// Importing namespaces in various modules into module
+// Importing namespaces in various libraries into module
 using namespace std;
 
+// header declaration of some functions in this module
+int get_integer(string prompt_txt); // This is a general function to get integer values alone from the cin function. 
+void add_donor();
+void search_donor();
+void modify_donors();
 
-void add_donor(){
-  cout<< "Something about donors";
-}
-void search_donor(){
-  cout<< "Something about searching donors";
-}
-void modify_donors(){
-  cout<< "Something about modifying donors";
-}
+
 int main() { //TJ – this introduces the first function the compiler will place in the compiled instructions
 
   int sel=4;
   while (sel>0 && sel<5){
-    cout<< "MINORITY EMPOWERMENT  \n THROUGH TECHNOLOGY \n \n";
-    cout << "Main Menu \n \n";
-    cout << "1. Add Donor or Donation \n \n";
-    cout << "2. Search Donors \n \n";
-    cout << "3. Modify Donors \n \n";
-    cout << "4. Exit \n \n";
-    cout << "Select: ";
-    cin >> sel;
+    string prompt;
+    prompt= "-------------------------------\n     MINORITY EMPOWERMENT\n      THROUGH TECHNOLOGY\n \n-------------------------------\n        Main Menu\n_______________________________\n \n  1. Add Donor or Donation \n  2. Search Donors \n  3. Modify Donors \n  4. Exit\n\n  Select: ";
+    cout<< prompt;
+    sel= get_integer(prompt);
     switch(sel){
       case 1:
       add_donor();
@@ -48,18 +40,38 @@ int main() { //TJ – this introduces the first function the compiler will place
       sel=0;
       continue;
       default:
-        if (sel<1 || sel>4){
-          cout << "Something went wrong. Try again! \n \n";
+          cout << "Opps! Option is out of range. Try again! \n \n";
           sel=4;
-          continue;
-        }else{
-          cout << "This program only accepts integers!...";
-          sel=0;
-          continue;
-        }
+
       
      
       
     }
     }  
   }
+
+//function to get value
+ int get_integer(string prompt_txt){
+  int opt=0;
+  cin>> opt;
+while(cin.fail()){
+  cout << "Opps! Only integers accepted. Try again! \n \n";
+  cout<< prompt_txt;
+  cin.clear();
+  cin.ignore(256,'\n');
+}
+cin.clear();
+cin.ignore(256,'\n');
+return opt;
+}
+
+
+void add_donor(){
+ //some code 
+}
+void search_donor(){
+// some code  
+}
+void modify_donors(){
+//some code  
+}
