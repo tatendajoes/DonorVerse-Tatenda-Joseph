@@ -56,9 +56,10 @@ int main() { //TJ – this introduces the first function the compiler will place
   cin>> opt;
 while(cin.fail()){
   cout << "Opps! Only integers accepted. Try again! \n \n";
-  cout<< prompt_txt;
   cin.clear();
   cin.ignore(256,'\n');
+  cout<< prompt_txt;
+  cin>> opt;
 }
 cin.clear();
 cin.ignore(256,'\n');
