@@ -7,7 +7,9 @@
 using namespace std;
 
 // header declaration of some functions in this module
-int errInt(string prompt_txt); // This is a general function to get integer values alone from the cin function. 
+int errInt(string prompt_txt);
+float errfloat(string prompt_txt);
+string errStr(string prompt_txt);
 void add_donor();
 void search_donor();
 void modify_donors();
